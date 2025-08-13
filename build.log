@@ -1,0 +1,13 @@
+ar -cr libblasLapack.a *.o
+
+mpif77  -O2 -cpp -fdefault-real-8 -fdefault-double-8 -w -std=legacy  -DMPI -DUNDERSCORE -DTIMER -I/home/declan/Nek5000/run/fdlf -I/home/declan/Nek5000/core -I./ -I/home/declan/Nek5000/core/experimental -I/home/declan/Nek5000/run/fdlf/obj  -c /home/declan/Nek5000/run/fdlf/fdlf.f -o /home/declan/Nek5000/run/fdlf/obj/fdlf.o
+mpif77 -c  -O2 -cpp -fdefault-real-8 -fdefault-double-8 -w -std=legacy  -DMPI -DUNDERSCORE -DTIMER -I/home/declan/Nek5000/run/fdlf -I/home/declan/Nek5000/core -I./ -I/home/declan/Nek5000/core/experimental -I/home/declan/Nek5000/run/fdlf/obj /home/declan/Nek5000/core/drive.f
+mpif77  -O2 -cpp -fdefault-real-8 -fdefault-double-8 -w -std=legacy  -DMPI -DUNDERSCORE -DTIMER -I/home/declan/Nek5000/run/fdlf -I/home/declan/Nek5000/core -I./ -I/home/declan/Nek5000/core/experimental -I/home/declan/Nek5000/run/fdlf/obj -o nek5000 drive.o /home/declan/Nek5000/run/fdlf/obj/fdlf.o /home/declan/Nek5000/run/fdlf/obj/libnek5000.a -L/home/declan/Nek5000/3rd_party/blasLapack -lblasLapack -L/home/declan/Nek5000/3rd_party/gslib/lib -lgs -Wl,--allow-multiple-definition
+
+
+#############################################################
+#                  Compilation successful!                  #
+#############################################################
+   text	   data	    bss	    dec	    hex	filename
+1705362	  40124	102702848	104448334	639c14e	nek5000
+
